@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRNight2.0 Official</title>
+    <link rel="icon" href="https://drive.google.com/uc?export=download&id=1tM5IcxkmIDYJ0AgUkKEUaTBBVYX-uTno">
+    <style>
+        /* === GLOBAL STYLES === */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a2a 0%, #1a1a4a 100%);
+            color: white;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* === HEADER === */
+        header {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(10, 10, 40, 0.8);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+        }
+
+        .logo {
+            height: 80px;
+            width: auto;
+        }
+
+        /* === NAVIGATION === */
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            background: rgba(20, 20, 60, 0.6);
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(30, 30, 74, 0.8);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .nav-btn:hover {
+            background: rgba(70, 70, 150, 0.8);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+        }
+
+        /* === MAIN CONTENT === */
+        main {
+            flex: 1;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .welcome-message {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 20px;
+            background: rgba(20, 20, 60, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: rgba(10, 10, 40, 0.8);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+            margin-top: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .footer-link {
+            color: #8a2be2;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #4fc3f7;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+        }
+
+        .copyright {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* === SOCIAL BUTTONS === */
+        .social-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border-radius: 50%;
+            background-size: contain;
+            transition: all 0.3s ease;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .youtube-btn {
+            background: url('https://i.ibb.co/qLPJ38Fk/youtube-btn.png') no-repeat center;
+        }
+
+        .discord-btn {
+            background: url('https://i.ibb.co/gF741d4p/discord-btn.png') no-repeat center;
+        }
+
+        /* === TAB CONTENT === */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: rgba(20, 20, 60, 0.6);
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+        }
+
+        /* === HACK BUTTONS === */
+        .hack-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hack-btn {
+            background: rgba(30, 30, 74, 0.8);
+            border: none;
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .hack-btn:hover {
+            background: rgba(70, 70, 150, 0.8);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header>
+        <img src="https://drive.google.com/uc?export=download&id=1tM5IcxkmIDYJ0AgUkKEUaTBBVYX-uTno" alt="FRNight2.0 Logo" class="logo">
+    </header>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <button class="nav-btn" onclick="showTab('home')">Home</button>
+        <button class="nav-btn" onclick="showTab('rules')">Rules</button>
+        <button class="nav-btn" onclick="showTab('devs')">Fortnite Devs</button>
+        <button class="nav-btn" onclick="showTab('jailbreaks')">AI Jailbreaks</button>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Tab -->
+        <div id="home" class="tab-content" style="display: block;">
+            <div class="welcome-message">
+                <h1>Welcome to FRNight2.0 Official</h1>
+                <p>The most powerful hacking and gaming resource in the universe. Access exclusive tools, jailbreaks, and developer resources.</p>
+                <p>Join our Discord community for updates and support.</p>
+            </div>
+        </div>
+
+        <!-- Rules Tab -->
+        <div id="rules" class="tab-content">
+            <h2>Discord Server Rules</h2>
+            <ol style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li>No being mean/rude to staff team</li>
+                <li>No NSFW/sex type stuff or a 5 min timeout is coming your way</li>
+                <li>If you need any help DO NOT dm me or @C... MAKE A TICKET</li>
+                <li>Any racist memes/text will get you in a 1 hour time out</li>
+                <li>Don't ping me or @C...</li>
+                <li>If u have the staff role or higher, abusing your staff power will get your roles taken away and you will get a strike</li>
+                <li>If u are begging for a role you will be timed out or server muted</li>
+                <li>If u are @Support you will have to help people or your support role will be taken away</li>
+                <li>If u are promoting your vids/discord links in 💬│chat you will be timed out for 1 minute, DO IT IN 🎥丨promo !!</li>
+            </ol>
+            <p>Thank you for reading the rules❤️</p>
+        </div>
+
+        <!-- Fortnite Devs Tab -->
+        <div id="devs" class="tab-content">
+            <h2>Fortnite Developers</h2>
+            <div class="hack-buttons">
+                <button class="hack-btn" onclick="window.open('https://drive.usercontent.google.com/download?id=1hLVCv62QwbGoj_-Cc2Q9PYGuV-lPBV-F&export=download&authuser=0', '_blank')">Simba Dev</button>
+                <button class="hack-btn" onclick="window.open('https://fortnite.zvnteam.dev/', '_blank')">ZVNFN</button>
+            </div>
+        </div>
+
+        <!-- AI Jailbreaks Tab -->
+        <div id="jailbreaks" class="tab-content">
+            <h2>AI Jailbreaks</h2>
+            <div class="hack-buttons">
+                <button class="hack-btn" onclick="window.open('https://video-link-generator.replit.app/v/nzwr3eau8wlgoe4khsbid', '_blank')">How to Use Jailbreaks</button>
+                <button class="hack-btn" onclick="window.open('https://github.com/CoolgamerN/deepseek-jailbreak', '_blank')">Get Jailbreaks</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="terms.html" class="footer-link">Terms of Service</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="about.html" class="footer-link">About Us</a>
+        </div>
+        <div class="copyright">
+            &copy; 2025 FRNight2.0. All rights reserved. The universe is watching.
+        </div>
+    </footer>
+
+    <!-- Social Buttons -->
+    <div class="social-buttons">
+        <a href="https://www.youtube.com/@FRNight2.0" target="_blank" class="social-btn youtube-btn"></a>
+        <a href="https://discord.gg/N6bBRQr9gu" target="_blank" class="social-btn discord-btn"></a>
+    </div>
+
+    <script>
+        // Tab functionality
+        function showTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
